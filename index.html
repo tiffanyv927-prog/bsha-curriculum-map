@@ -1009,6 +1009,7 @@ function renderMatrix() {
 // \u2500\u2500 RENDER GAP GRID \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderGaps() {
   const grid = document.getElementById('gap-grid');
+  grid.innerHTML = '';
   const byStatus = { critical: [], partial: [], yes: [] };
   AUPHA_GAPS.forEach(g => byStatus[g.status].push(g));
 
@@ -1035,6 +1036,9 @@ function renderGaps() {
 // \u2500\u2500 RENDER BRIDGE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderBridge() {
   const levelsEl = document.getElementById('bridge-levels');
+  const tracksEl2 = document.getElementById('bridge-tracks');
+  levelsEl.innerHTML = '';
+  tracksEl2.innerHTML = '';
   BRIDGE_LEVELS.forEach(l => {
     levelsEl.innerHTML += `
       <div class="bridge-level ${l.cls}">
